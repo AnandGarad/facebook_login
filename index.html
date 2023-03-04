@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facebook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+       
+    <style>
+        .container{
+            box-sizing: border-box;
+            box-shadow:  2px 2px 8px rgb(65, 63, 63);
+            justify-content: center;
+            align-items: center;
+            width: 60vh;
+            
+        }
+        .heding{
+            font-size: 8vh;
+
+        }
+
+    </style>
+
+       <script type="text/javascript">
+           var user= {
+               "Email":"Anand11@gmail.com",
+               "Mobaile":"9103038989",
+               "Password":"Anand@123"
+
+           }
+                    
+            function bodyload(){
+                 alert(` Enter this Details   Email is  ( ${user.Email}  ),   Mobaile ( ${user.Mobaile}) , Password (${user.Password})`);
+            }
+               
+            function logCheck(){
+                let userId = document.getElementById("userId").value;
+                let password =document.getElementById("password").value;
+              var  logInSuccess =document.getElementById("logInSuccess");
+              var card = document.getElementById("card");
+                var flag="";
+                if(userId===user.Email){
+                     flag =`<p class="text-center p-2 m-3 "> Your Email Address is ${userId} verify send --OTP Check your Email</p>`;
+                     card.className="d-none";
+
+                     logInSuccess.innerHTML=flag;
+                     logInSuccess.className="d-block  bg-warning text-success justify-content-center align-items-center";
+                     
+                    }
+                    else if(userId===user.Mobaile){
+                    flag =`<p class="text-center p-2 m-3 "> Your Mobaile Number is ${userId} verify send --OTP Check your Mobaile </p>`;
+                    card.className="d-none";
+                    logInSuccess.innerHTML=flag;
+                    logInSuccess.className="d-block w-75 bg-warning text-success justify-content-center align-items-center";
+
+
+                  }
+                  else{
+                      document.getElementById("Error").innerHTML=`${userId} is not Registered`
+                  }
+
+            }
+       </script>
+</head>
+<body onload="bodyload()">
+    <main class="container-fluid bg-body-secondary pt-1 m-auto" style="height:500px">
+        <div>    <h1 class="text-center mt-4 text-primary heding fw-bold ">facebook</h1></div>
+        
+        <div class="container d-none  " style="height:100px" id="logInSuccess"></div>
+
+        <div class="container bg-light  m-auto mt-lg-4 d-flex flex-column justify-content-center align-items-center  border border-1" style="height:300px" id="card">
+        <span class=" mb-4 text-dark fs-6 fw-bold"> <span class="bi bi-facebook "></span>
+        Login in to Facebook</span>
+        <div class="row mb-3 position-relative  w-100"> <input type="text" class="form-control" id="userId" placeholder="Enter the email or phone">  </div>
+        <div class="row mb-3 w-100 "> <input type="text" class="form-control" id="password" placeholder="Enter the  Password"> </div>
+        <div class=" mb-2 text-danger" id="Error"> </div>
+        <button type="button" class="btn btn-primary w-25 fs-5 fw-bold" onclick="logCheck()"> Log In </button>
+        <div class="row mt-2">
+             <div class="col">   <span class="me-1"><a href="">Forgotten account?</a></span>
+                <span class="ms-2"><a href="">Sign up for Facebook</a></span></div>
+              </div>
+          </div>
+    </div>
+  </main>
+    
+  <footer class="bg-light" style="height:90px">
+         <div class="row">
+            <div class="col-12 d-flex justify-content-around align-items-center">
+               <p class="text-center text-secondary mt-4">&copy;anand-2023</p> 
+            </div>
+         </div>
+  </footer>
+     
+</body>
+</html>
